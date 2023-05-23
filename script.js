@@ -25,6 +25,11 @@ console.log("welcome to tic toa toe");
         if((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "") ){
             document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won"
             gameover = true
+            if(gameover)
+            {
+                setTimeout(reset,950);
+             
+            }
         }
         })
     }
@@ -45,16 +50,25 @@ console.log("welcome to tic toa toe");
             }
     })
  })
- reset.addEventListener('click',()=>{
-    let boxtext = document.querySelectorAll('.boxtext');
+ function reset()
+ {
+    let a=alert(changeturn() +" won the game .You want to reset it");
+    if(a=true)
+    {let boxtext = document.querySelectorAll('.boxtext');
     Array.from(boxtext).forEach(element =>{
         element.innerText=""
  });
  turn ="X";
  gameover=false;
  document.getElementsByClassName("info")[0].innerText="turn for "+turn;
-})
-
-
- 
-
+ }
+}
+//  reset.addEventListener('click',()=>{
+//     let boxtext = document.querySelectorAll('.boxtext');
+//     Array.from(boxtext).forEach(element =>{
+//         element.innerText=""
+//  });
+//  turn ="X";
+//  gameover=false;
+//  document.getElementsByClassName("info")[0].innerText="turn for "+turn;
+// })
