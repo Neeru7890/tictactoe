@@ -27,7 +27,7 @@ console.log("welcome to tic toa toe");
             gameover = true
             if(gameover)
             {
-                setTimeout(reset,950);
+                setTimeout(reset1,900);
              
             }
         }
@@ -50,7 +50,7 @@ console.log("welcome to tic toa toe");
             }
     })
  })
- function reset()
+ function reset1()
  {
     let a=alert(changeturn() +" won the game .You want to reset it");
     if(a=true)
@@ -63,12 +63,13 @@ console.log("welcome to tic toa toe");
  document.getElementsByClassName("info")[0].innerText="turn for "+turn;
  }
 }
-//  reset.addEventListener('click',()=>{
-//     let boxtext = document.querySelectorAll('.boxtext');
-//     Array.from(boxtext).forEach(element =>{
-//         element.innerText=""
-//  });
-//  turn ="X";
-//  gameover=false;
-//  document.getElementsByClassName("info")[0].innerText="turn for "+turn;
-// })
+reset.addEventListener('click', () => {
+    let boxtext = document.querySelectorAll('.boxtext');
+    Array.from(boxtext).forEach(element => {
+        element.innerText = ""
+    });
+    turn = "X"; 
+    gameover = false
+    document.getElementsByClassName("info")[0].innerText  = "Turn for " + turn;
+    
+})
